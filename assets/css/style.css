@@ -1,0 +1,246 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+body {
+  background: #51DB98;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.wrapper {
+  width: 700px;
+  height: 500px;
+  margin: 100px auto;
+  display: flex;
+  /*flex-direction: row;*/
+  flex-flow: row wrap;
+}
+
+/**************************** LEFT COLUMN *************************************/
+
+
+.left-container {
+  float: left;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -----------MENU BAR---------- */
+.menu {
+  height: 50px;
+  background: #252525;
+  width: 100%;
+  /*margin-right: 1px solid black;*/
+  /*margin-right: -1px;*/
+}
+
+#dropdown-menu {
+  height: 100%;
+  width: 50px;
+  font-size: 15px;
+  background: none;
+  color: #DADBDB;
+  outline: none;
+}
+
+.logo {
+  color: #6EE1B3;
+  line-height: 50px;
+  /*font-weight: 700;*/
+  font-family: 'Orbitron', sans-serif;
+}
+
+
+
+
+/* -----------SEARCH INPUT---------- */
+.search {
+  width: 100%;
+  height: 50px;
+  outline: none;
+}
+
+
+/* -----------HISTORY WINDOW---------- */
+.history {
+  background: #fff;
+  flex: 1;
+}
+
+.user {
+  height: 50px;
+  clear: both;
+  border-left: 4px solid transparent;
+}
+
+.user:hover {
+  border-color: #58D99B;
+  background: #F2F2F2;
+}
+
+.history img {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  /*max-width: 50px !important;*/
+  /*max-height: 100%;*/
+  /*height: 70px;*/
+  /*margin: 20px;*/
+}
+
+.profile-picture {
+  height: 50px;
+  width: 50px;
+  float: left;
+}
+
+.svg-clipped {
+  -webkit-clip-path:url(#svgPath);
+  /*-moz-clip-path:url(#svgPath);*/
+  clip-path:url(#svgPath);
+  /*height: 50px;*/
+}
+
+.clip-circle {
+  clip-path: circle(20px at center);
+  width: 100%;
+  height: 100%;
+
+}
+
+.name {
+  padding-top: 8px;
+  font-size: 0.8em;
+  font-weight: 700;
+  display: block;
+}
+
+.message {
+  padding-top: 2px;
+  font-size: 0.5em;
+  display: block;
+}
+
+
+/*ul {
+  list-style: none;
+  padding-left: 0;
+}*/
+
+/*.history li {
+  height: 60px;
+  line-height: 60px;
+}*/
+
+
+/**************************** RIGHT COLUMN ************************************/
+.right-container {
+  height: 100%;
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -----------TOP BAR---------- */
+.top-bar {
+  overflow: hidden;
+  background: #fff;
+  height: 50px;
+  line-height: 50px;
+}
+
+.top-bar i {
+  margin-right: 25px;
+  font-size: 18px;
+}
+
+/* -----------CONVERSATION WINDOW-----------*/
+.conversation {
+  background: #F6F6F6;
+  flex: 1;
+  position: relative;
+}
+
+/* -----------BOTTOM BAR-----------*/
+.input-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  color: #C3C3C3;
+  /*border-top: 1px solid #F0F0F0;
+  border-left: 1px solid #F0F0F0;*/
+
+}
+
+.icons {
+  margin-right: 20px;
+  /*width: 30px;
+  text-align: center;
+  line-height: 40px;*/
+}
+
+.icons i {
+  margin-left: 10px;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+span.divider {
+  display: inline-block;
+  width: 0;
+  height: 28px;
+  margin: 6px 0;
+  border-left: 1px solid #F8F8F8;
+  border-right: 1px solid #F8F8F8;
+}
+
+.input {
+  outline: none;
+  height: 100%;
+  flex: 1;
+  margin: 0 20px;
+
+}
+
+#send-button {
+ height: 100%;
+ width: 40px;
+ background: none;
+ border: none;
+ font-size: 20px;
+ color: #1094FF;
+ outline: none;
+}
+
+
+
+/******************************* COMMON ***************************************/
+.fa-long-arrow-up {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#dropdown-menu, .icons, .input, .logo, .interlocutor {
+  float: left;
+}
+
+#send-button, .logged-user, .top-bar span {
+  float: right;
+}
+i, button {
+  cursor: pointer;
+}
