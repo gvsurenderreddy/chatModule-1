@@ -16,28 +16,22 @@ body {
   height: 500px;
   margin: 100px auto;
   display: flex;
-  /*flex-direction: row;*/
-  flex-flow: row wrap;
+  flex-direction: row;
+  box-shadow: 0 0 45px #999;
 }
 
 /**************************** LEFT COLUMN *************************************/
-
-
 .left-container {
-  float: left;
-  width: 30%;
-  height: 100%;
-  display: flex;
+  flex: 0 0 35%;
   flex-direction: column;
+  display: flex;
 }
 
 /* -----------MENU BAR---------- */
 .menu {
-  height: 50px;
   background: #252525;
-  width: 100%;
-  /*margin-right: 1px solid black;*/
-  /*margin-right: -1px;*/
+  flex: 0 0 50px;
+  /*border-bottom: 1px solid black;*/
 }
 
 #dropdown-menu {
@@ -52,19 +46,27 @@ body {
 .logo {
   color: #6EE1B3;
   line-height: 50px;
-  /*font-weight: 700;*/
   font-family: 'Orbitron', sans-serif;
 }
 
-
-
-
 /* -----------SEARCH INPUT---------- */
-.search {
-  width: 100%;
-  height: 50px;
-  outline: none;
+.search input {
+  text-indent: 35px;
 }
+
+.search {
+  position: relative;
+  flex: 0 0 50px;
+}
+
+.search .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 14px;
+  font-size: 0.6em;
+  color: #E7E8E9;
+}
+
 
 
 /* -----------HISTORY WINDOW---------- */
@@ -88,10 +90,6 @@ body {
   width: 100%;
   height: 100%;
   display: inline-block;
-  /*max-width: 50px !important;*/
-  /*max-height: 100%;*/
-  /*height: 70px;*/
-  /*margin: 20px;*/
 }
 
 .profile-picture {
@@ -111,7 +109,6 @@ body {
   clip-path: circle(20px at center);
   width: 100%;
   height: 100%;
-
 }
 
 .name {
@@ -141,19 +138,24 @@ body {
 
 /**************************** RIGHT COLUMN ************************************/
 .right-container {
-  height: 100%;
-  position: relative;
+  /*position: relative;*/
   flex: 1;
-  display: flex;
   flex-direction: column;
+  display: flex;
+  /*height: 100%;*/
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*flex-flow: row wrap;*/
 }
 
 /* -----------TOP BAR---------- */
 .top-bar {
-  overflow: hidden;
+  /*overflow: hidden;*/
   background: #fff;
   height: 50px;
   line-height: 50px;
+  flex: 0 0 50px;
+  /*border-left: 1px solid black;*/
 }
 
 .top-bar i {
@@ -163,31 +165,33 @@ body {
 
 /* -----------CONVERSATION WINDOW-----------*/
 .conversation {
+  border-top: 1px solid #F0F0F0;
+  border-bottom: 1px solid #F0F0F0;
+  border-left: 1px solid #F0F0F0;
+  /*margin-top: -1px;*/
   background: #F6F6F6;
-  flex: 1;
   position: relative;
+  flex: 1;
+  /***for later messages in history***/
+  /*display: flex;*/
+  /*flex-direction: column;*/
 }
 
 /* -----------BOTTOM BAR-----------*/
 .input-bar {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
   background: #fff;
+  flex: 0 0 40px;
+  color: #C3C3C3;
   display: flex;
   flex-direction: row;
-  color: #C3C3C3;
-  /*border-top: 1px solid #F0F0F0;
-  border-left: 1px solid #F0F0F0;*/
+  /*border-top: 1px solid #F0F0F0;*/
+  border-left: 1px solid #F0F0F0;
 
 }
 
 .icons {
   margin-right: 20px;
-  /*width: 30px;
-  text-align: center;
-  line-height: 40px;*/
+  flex: 0 0 auto;
 }
 
 .icons i {
@@ -206,16 +210,13 @@ span.divider {
 }
 
 .input {
-  outline: none;
-  height: 100%;
-  flex: 1;
   margin: 0 20px;
-
+  flex: 1;
 }
 
 #send-button {
  height: 100%;
- width: 40px;
+ flex: 0 0 40px;
  background: none;
  border: none;
  font-size: 20px;
@@ -234,13 +235,25 @@ span.divider {
     transform: rotate(45deg);
 }
 
-#dropdown-menu, .icons, .input, .logo, .interlocutor {
+/*#dropdown-menu, .icons, .input, .logo, .interlocutor {
+  float: left;
+}*/
+
+#dropdown-menu, .icons, .input, .logo, .interlocutor, .divider {
   float: left;
 }
 
 #send-button, .logged-user, .top-bar span {
   float: right;
 }
+
+input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 0.7em;
+}
+
 i, button {
   cursor: pointer;
 }
