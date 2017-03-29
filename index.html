@@ -7,10 +7,11 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="assets/js/lib/jquery-3.1.1.min.js"></script>
+
   </head>
   <body>
     <div class="wrapper">
-
       <div class="left-container">
 
         <div class="menu">
@@ -32,9 +33,77 @@
         <div class="search">
           <span class="fa fa-search"></span>
           <input type="text" name="" value="" placeholder="Search Conversation">
+          <button id="add-conversation" type="button" name="button">
+            <p>+</p>
+            <!-- <i class="fa fa-plus" aria-hidden="true"></i> -->
+          </button>
         </div>
 
         <div class="history">
+
+          <div class="user">
+            <div class="profile-picture">
+              <img class="svg-clipped" src="images/profiles/Ramsay.jpg" alt="">
+              <svg height="0" width="0">
+                <defs>
+                  <clipPath id="svgPath">
+                    <circle  cx="25" cy="25" r="17" stroke="red" fill="none" stroke-width="5"/>
+                  </clipPath>
+                  <!-- <circle cx="25" cy="25" r="25" stroke="black" fill="red" stroke-width="5" clip-path="url(#svgPath)" /> -->
+                  <!-- <circle  cx="25" cy="25" r="20" stroke="black" fill="red" stroke-width="5" /> -->
+                </defs>
+              </svg>
+            </div>
+            <span class="name">Ramsay Bolton</span>
+            <span class="news">Oh, Lord! I see so much unuseful skin on your body!</span>
+          </div>
+
+          <div class="user">
+            <div class="profile-picture">
+              <img class="svg-clipped" src="images/profiles/Jon.jpg" alt="">
+              <!-- if one time declared, there is no need to declare other ones -->
+              <!-- <svg height="0" width="0">
+                <defs>
+                  <clipPath id="svgPath">
+                    <circle stroke="#000000" stroke-miterlimit="10" cx="25" cy="25" r="20" />
+                  </clipPath>
+                </defs>
+              </svg> -->
+            </div>
+            <span class="name">Jon Snow</span>
+            <span class="news">Winter is coming, so... let it snow, let it snow, let it snow!</span>
+          </div>
+
+          <div class="user">
+            <div class="profile-picture">
+              <img class="svg-clipped" src="images/profiles/Arya.jpg" alt="">
+              <!-- <svg height="0" width="0">
+                <defs>
+                  <clipPath id="svgPath">
+                    <circle stroke="#000000" stroke-miterlimit="10" cx="25" cy="25" r="20" />
+                  </clipPath>
+                </defs>
+              </svg> -->
+            </div>
+            <span class="name">Arya Stark</span>
+            <span class="news">Valar Morghulis.. Oops. I feel like.. something.. stuck in my.. throat...</span>
+          </div>
+
+          <div class="user">
+            <div class="profile-picture">
+              <img class="svg-clipped" src="images/profiles/Petyr.jpg" alt="">
+              <!-- <svg height="0" width="0">
+                <defs>
+                  <clipPath id="svgPath">
+                    <circle stroke="#000000" stroke-miterlimit="10" cx="25" cy="25" r="20" />
+                  </clipPath>
+                </defs>
+              </svg> -->
+            </div>
+            <span class="name">Petyr Baelish</span>
+            <span class="news">Have you seen Sansa? Where is she?! Saaaaansaaaa! I love you!</span>
+          </div>
+
 
 
           <div class="user">
@@ -51,7 +120,7 @@
               </svg>
             </div>
             <span class="name">Ramsay Bolton</span>
-            <span class="message">I see too much skin on your body</span>
+            <span class="news">Oh, Lord! I see so much unuseful skin on your body!</span>
           </div>
 
           <div class="user">
@@ -67,7 +136,7 @@
               </svg> -->
             </div>
             <span class="name">Jon Snow</span>
-            <span class="message">Winter is coming</span>
+            <span class="news">Winter is coming, so... let it snow, let it snow, let it snow!</span>
           </div>
 
           <div class="user">
@@ -82,7 +151,7 @@
               </svg> -->
             </div>
             <span class="name">Arya Stark</span>
-            <span class="message">Valar Morghulis</span>
+            <span class="news">Valar Morghulis.. Oops. I feel like.. something.. stuck in my.. throat...</span>
           </div>
 
           <div class="user">
@@ -97,47 +166,40 @@
               </svg> -->
             </div>
             <span class="name">Petyr Baelish</span>
-            <span class="message">Have you seen Sansa?</span>
+            <span class="news">Have you seen Sansa? Where is she?! Saaaaansaaaa! I love you!</span>
           </div>
 
-
-
-          <!-- <div class="user">
-            <div class="profile-picture">
-              <img class="clip-circle" src="images/profiles/Ramsay.jpg" alt="">
-            </div>
-            <span>Ramsay Bolton</span>
-            <span>Last conversation</span>
-          </div>
           <div class="user">
             <div class="profile-picture">
-              <img class="clip-circle" src="images/profiles/Jon.jpg" alt="">
+              <img class="svg-clipped" src="images/profiles/Arya.jpg" alt="">
+              <!-- <svg height="0" width="0">
+                <defs>
+                  <clipPath id="svgPath">
+                    <circle stroke="#000000" stroke-miterlimit="10" cx="25" cy="25" r="20" />
+                  </clipPath>
+                </defs>
+              </svg> -->
             </div>
-            <span>Jon Snow</span>
+            <span class="name">Arya Stark</span>
+            <span class="news">Valar Morghulis.. Oops. I feel like.. something.. stuck in my.. throat...</span>
           </div>
-          <div class="user">
-            <div class="profile-picture">
-              <img class="clip-circle" src="images/profiles/Arya.jpg" alt="">
-            </div>
-            <span>Arya Stark</span>
-          </div>
-          <div class="user">
-            <div class="profile-picture">
-              <img class="clip-circle" src="images/profiles/Petyr.jpg" alt="">
-            </div>
-            <span>Petyr</span>
-          </div> -->
 
-          <!-- <ul>
-            <li><span>Ramsay Bolton</span></li>
-            <li><span>Jon Snow</span></li>
-            <li><span>Arya Stark</span></li>
-            <li><span>Petyr Baelish</span></li>
-            <li><span>Petyr Baelish</span></li>
-            <li><span>Petyr Baelish</span></li>
-          </ul> -->
+          <div class="user">
+            <div class="profile-picture">
+              <img class="svg-clipped" src="images/profiles/Petyr.jpg" alt="">
+              <!-- <svg height="0" width="0">
+                <defs>
+                  <clipPath id="svgPath">
+                    <circle stroke="#000000" stroke-miterlimit="10" cx="25" cy="25" r="20" />
+                  </clipPath>
+                </defs>
+              </svg> -->
+            </div>
+            <span class="name">Petyr Baelish</span>
+            <span class="news">Have you seen Sansa? Where is she?! Saaaaansaaaa! I love you!</span>
+          </div>
+
         </div>
-
       </div>
 
       <div class="right-container">
@@ -151,17 +213,35 @@
           <span><i class="fa fa-video-camera" aria-hidden="true"></i></span>
 
         </div>
-        <!-- <div class="conversation-outer"> -->
-          <div id="out" class="conversation">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Some message 2</p>
-            <p>Some message 3</p>
-            <p>Some message 4</p>
+        <div class="conversation-outer">
+          <div id="conversation" class="conversation-inner">
+            <div class="user-sent-message">
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              </span>
+            </div>
+            <div class="logged-user-sent-message">
+              <span>
+                Lorem ipsum
+              </span>
+            </div>
+            <div class="logged-user-sent-message">
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              </span>
+            </div>
+            <div class="user-sent-message">
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              </span>
+            </div>
+            <div class="user-sent-message">
+              <span>
+                Lorem ipsum dolor sit amet
+              </span>
+            </div>
           </div>
-        <!-- </div> -->
+        </div>
 
         <form class="input-bar">
           <div class="icons">

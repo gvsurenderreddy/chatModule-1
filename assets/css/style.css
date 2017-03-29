@@ -12,7 +12,7 @@ body {
 }
 
 .wrapper {
-  width: 700px;
+  width: 800px;
   height: 500px;
   margin: 100px auto;
   display: flex;
@@ -22,7 +22,7 @@ body {
 
 /**************************** LEFT COLUMN *************************************/
 .left-container {
-  flex: 0 0 35%;
+  flex: 0 0 30%;
   flex-direction: column;
   display: flex;
 }
@@ -50,10 +50,6 @@ body {
 }
 
 /* -----------SEARCH INPUT---------- */
-.search input {
-  text-indent: 35px;
-}
-
 .search {
   position: relative;
   flex: 0 0 50px;
@@ -67,12 +63,32 @@ body {
   color: #E7E8E9;
 }
 
+.search input {
+  text-indent: 35px;
+}
+
+.search button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  background: #51DB98;
+  outline: none;
+  box-shadow: 0 0 10px #51DB98;
+  font-size: 20px;
+  /*line-height: 30px;*/
+  text-align: center;
+}
 
 
 /* -----------HISTORY WINDOW---------- */
 .history {
   background: #fff;
   flex: 1;
+  overflow: auto;
 }
 
 .user {
@@ -118,34 +134,18 @@ body {
   display: block;
 }
 
-.message {
+.news {
   padding-top: 2px;
   font-size: 0.5em;
   display: block;
 }
 
 
-/*ul {
-  list-style: none;
-  padding-left: 0;
-}*/
-
-/*.history li {
-  height: 60px;
-  line-height: 60px;
-}*/
-
-
 /**************************** RIGHT COLUMN ************************************/
 .right-container {
-  /*position: relative;*/
   flex: 1;
   flex-direction: column;
   display: flex;
-  /*height: 100%;*/
-  /*display: flex;*/
-  /*flex-direction: row;*/
-  /*flex-flow: row wrap;*/
 }
 
 /* -----------TOP BAR---------- */
@@ -164,7 +164,7 @@ body {
 }
 
 /* -----------CONVERSATION WINDOW-----------*/
-.conversation {
+.conversation-outer {
   border-top: 1px solid #F0F0F0;
   border-bottom: 1px solid #F0F0F0;
   border-left: 1px solid #F0F0F0;
@@ -174,22 +174,68 @@ body {
   overflow: auto;
   /***for later messages in history***/
   display: flex;
-  flex-direction: column;
+  /*flex-direction: column;*/
 }
 
-::-webkit-scrollbar {
-    width: 6px;
+.conversation-inner {
+  /*border-top: 1px solid #F0F0F0;
+  border-bottom: 1px solid #F0F0F0;
+  border-left: 1px solid #F0F0F0;*/
+
+  padding: 10px 30px 10px 10px;
+  background: #F6F6F6;
+  /*position: relative;*/
+  margin: 0 10px 0 40px;
+
+  /*flex: 0;*/
+  overflow: auto;
+  /***for later messages in history***/
+  /*display: flex;
+  flex-direction: column;*/
 }
+
+.user-sent-message {
+  background: #fff;
+  border-radius: 0 1em 1em 1em;
+  box-shadow: 0 0 15px #DDD;
+  max-width: 60%;
+  padding: 20px;
+  font-size: 0.8em;
+  margin: 10px;
+  float: left;
+}
+
+.logged-user-sent-message {
+  background: #51DB98;
+  color: #fff;
+  border-radius: 1em 0 1em 1em;
+  box-shadow: 0 0 15px #51DB98;
+  max-width: 60%;
+  padding: 20px;
+  font-size: 0.8em;
+  margin: 10px;
+  float: right;
+}
+/*
+.clearfix {
+  clear: both;
+}*/
+
+
+/* WEBKIT SETUP FOR SCROLLBAR - INCOMPATIBILE WITH FIREFOX*/
+/*::-webkit-scrollbar {
+    width: 6px;
+}*/
 
 /* Track */
-::-webkit-scrollbar-track {
+/*::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     -webkit-border-radius: 10px;
     border-radius: 10px;
-}
+}*/
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+/*::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
     background: rgba(255,0,0,0.8);
@@ -197,7 +243,7 @@ body {
 }
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: rgba(255,0,0,0.4);
-}
+}*/
 
 
 
