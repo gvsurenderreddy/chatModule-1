@@ -1,0 +1,643 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+#dropdown-menu, #logged-user, #send-button {
+  background: none;
+  outline: none;
+  height: 100%;
+  text-align: center;
+}
+
+.search #search-input, .input {
+  width: 100%;
+  height: 100%;
+  font-size: 0.7em;
+}
+
+.right-container a {
+  width: 40px;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+-------------------------------------------------------------------------------*/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {
+  display: block;
+}
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects */
+/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+img, object, embed {
+  max-width: 100%;
+}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+#map img {
+		max-width: none;
+}
+*/
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll;
+}
+
+/* we use a lot of ULs that aren't bulleted.
+	you'll have to restore the bullets within content,
+	which is fine because they're probably customized anyway */
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */
+}
+
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+  vertical-align: bottom;
+}
+
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline;
+}
+
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+select, input, textarea {
+  font: 99% sans-serif;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+td, td img {
+  vertical-align: top;
+}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+/* hand cursor on clickable elements */
+.clickable, label, input[type=button], input[type=submit], input[type=file], button {
+  cursor: pointer;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+/* make buttons play nice in IE */
+button, input[type=button] {
+  width: auto;
+  overflow: visible;
+}
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+/* let's clear some floats */
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/*--------------------------------------- END OF RESET FILE -------------------------------------------*/
+body {
+  background: #51DB98;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+.wrapper {
+  width: 800px;
+  height: 500px;
+  margin: 100px auto;
+  box-shadow: 0 0 45px #7d7d7d;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+/**************************** LEFT COLUMN *************************************/
+.left-container {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 30%;
+  background: #fff;
+  border-right: 1px solid #E0E0E0;
+}
+
+.menu {
+  background: #252525;
+  flex: 0 0 50px;
+  display: flex;
+  flex-direction: row;
+  box-sizing: content-box;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  width: 100%;
+}
+
+#dropdown-menu {
+  font-size: 15px;
+  color: #b6b6b6;
+  flex: 0 0 50px;
+}
+#dropdown-menu:hover {
+  color: #fff;
+}
+
+.logo {
+  line-height: 50px;
+  font-family: "Orbitron", sans-serif;
+  flex: 1;
+  color: #51DB98;
+  background: -webkit-linear-gradient(left, #5CFF66, #E4FF70, #FFE24F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#logged-user {
+  flex: 0 0 60px;
+}
+#logged-user:hover .choose-user {
+  color: #fff;
+}
+#logged-user:hover .logged-user-picture {
+  box-shadow: 0 0 20px #fff;
+}
+
+.logged-user-picture {
+  height: 30px;
+  width: 30px;
+  box-shadow: none;
+  border: none;
+  position: inherit;
+  z-index: auto;
+  border-radius: 50%;
+}
+
+.choose-user {
+  color: #b6b6b6;
+  font-size: 0.8em;
+  position: relative;
+}
+
+.search {
+  position: relative;
+  height: 50px;
+  flex: 0 0 50px;
+}
+.search .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  font-size: 0.6em;
+  color: #E0E0E0;
+}
+.search #search-input {
+  width: 60%;
+  margin-left: 35px;
+}
+.search button {
+  height: 30px;
+  width: 30px;
+  box-shadow: 0 0 10px #51DB98;
+  border: none;
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 30px;
+  color: #fff;
+  top: 10px;
+  right: 10px;
+  background: #51DB98;
+}
+.search button:hover {
+  background: #8cf2bf;
+}
+.search button i {
+  top: 9px;
+}
+
+.history-outer, .history-inner {
+  background: #fff;
+  overflow: auto;
+}
+.history-outer {
+  display: flex;
+}
+.history-inner {
+  margin-right: 5px;
+  flex: 1;
+}
+.history-inner li {
+  height: 60px;
+  overflow: hidden;
+}
+
+.user-container > a {
+  border-left: 5px solid transparent;
+  text-decoration: none;
+  flex: 1;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+}
+.user-container > a:hover {
+  border-color: #51DB98;
+  background: #F0F0F0;
+}
+.user-after-click {
+  border-color: #58D99B !important;
+  background: #F2F2F2 !important;
+}
+
+.picture-container {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  position: relative;
+}
+.picture-container .is-active {
+  height: 10px;
+  width: 10px;
+  box-shadow: none;
+  border: 2px solid #fff;
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  background: #51DB98;
+  margin: 10px;
+}
+.picture-container .profile-picture {
+  height: 40px;
+  width: 40px;
+  box-shadow: none;
+  border: 2px solid #fff;
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.info-container {
+  flex: 1;
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.top-info {
+  overflow: hidden;
+  flex: 1;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.top-info .name {
+  font-size: 0.7em;
+  font-weight: 700;
+  flex: 1;
+  padding-right: 10px;
+}
+.top-info .sent-time {
+  width: 20px;
+  font-size: 0.5em;
+  flex: 0 0 20px;
+  color: #b0b0b0;
+}
+
+.bottom-info {
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.bottom-info .news {
+  padding-right: 10px;
+  font-size: 0.5em;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+.bottom-info .unread-count {
+  width: 15px;
+  height: 15px;
+  font-size: 0.5em;
+  flex: 0 0 15px;
+  color: #fff;
+  background: #1094FF;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 15px;
+}
+
+/**************************** RIGHT COLUMN ************************************/
+.right-container {
+  max-width: 70%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.right-container a:active i {
+  color: #51DB98;
+}
+.right-container a:hover i {
+  color: #51DB98;
+}
+
+.top-bar {
+  background: #fff;
+  height: 50px;
+  line-height: 50px;
+  flex: 0 0 50px;
+  border-bottom: 1px solid #E0E0E0;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: row;
+}
+.top-bar .current-user {
+  margin-left: 35px;
+  display: flex;
+  flex: 1;
+}
+.top-bar .current-user span {
+  font-weight: 700;
+  font-size: 0.8em;
+}
+.top-bar a i {
+  font-size: 20px;
+  line-height: 50px;
+  color: #000;
+}
+
+.fa-long-arrow-up {
+  transform: rotate(45deg);
+}
+
+.conversation-outer, .conversation-inner {
+  background: #F0F0F0;
+  overflow: auto;
+  flex: 1;
+}
+.conversation-outer {
+  display: flex;
+}
+.conversation-inner {
+  padding: 20px 10px;
+  margin: 0 5px;
+}
+.conversation-inner ul li {
+  margin: 0 10px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+}
+
+.user-profile-picture, .logged-user-profile-picture {
+  height: 35px;
+  width: 35px;
+  box-shadow: 0 0 10px #b6b6b6;
+  border: none;
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+}
+.user-sent-message, .logged-user-sent-message {
+  max-width: 60%;
+  padding: 20px;
+  font-size: 0.8em;
+  word-wrap: break-word;
+  margin-top: 17.5px;
+  margin-bottom: 10px;
+}
+
+.user-profile-picture {
+  left: 10px;
+}
+.user-sent-message {
+  background: #fff;
+  border-radius: 0 1em 1em 1em;
+  box-shadow: 0 0 15px #E0E0E0;
+  margin-left: 17.5px;
+  margin-right: 10px;
+  float: left;
+}
+
+.logged-user-profile-picture {
+  right: 10px;
+}
+.logged-user-sent-message {
+  background: #51DB98;
+  color: #fff;
+  margin-right: 17.5px;
+  box-shadow: 0 0 15px #51DB98;
+  border-radius: 1em 0 1em 1em;
+  margin-left: 10px;
+  float: right;
+}
+
+/* WEBKIT SETUP FOR SCROLLBAR - INCOMPATIBILE WITH FIREFOX*/
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: rgba(204, 204, 204, 0.8);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(204, 204, 204, 0.1);
+}
+
+/*Track */
+/*::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}*/
+/* -----------BOTTOM BAR-----------*/
+.input-bar {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #E0E0E0;
+  background: #fff;
+  color: #E0E0E0;
+  flex: 0 0 40px;
+}
+.input-bar a i {
+  font-size: 20px;
+  line-height: 40px;
+  color: #b6b6b6;
+}
+
+span.divider {
+  width: 0;
+  height: 28px;
+  margin: 6px 0;
+  border-left: 1px solid #F0F0F0;
+  border-right: 1px solid #F0F0F0;
+}
+
+.input {
+  margin: 0 20px;
+  flex: 1;
+}
+
+#send-button {
+  flex: 0 0 40px;
+  font-size: 20px;
+  color: #1094FF;
+}
+
+.fa-paper-plane {
+  text-shadow: 5px 5px 5px #E0E0E0;
+}
+
+/*# sourceMappingURL=main.css.map */

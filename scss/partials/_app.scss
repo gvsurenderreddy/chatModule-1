@@ -1,0 +1,405 @@
+.wrapper {
+  width: 800px;
+  height: 500px;
+  margin: 100px auto;
+  box-shadow: 0 0 45px $gray-wrapper-shadow;
+  position: relative;
+  @include flexProperties( flex, row);
+}
+
+/**************************** LEFT COLUMN *************************************/
+.left-container {
+  @include flexProperties( flex, column);
+  flex: 0 0 30%;
+  background: $white;
+  border-right: $gray-border;
+}
+
+.menu {
+  background: $dark;
+  flex: 0 0 50px;
+  @include flexProperties( flex, row);
+  box-sizing: content-box;
+  border-bottom: $black-border;
+  border-right: $black-border;
+  width: 100%;
+}
+
+#dropdown-menu {
+  @extend %button;
+  font-size: 15px;
+  color: $dark-gray;
+  flex: 0 0 50px;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.logo {
+  line-height: 50px;
+  font-family: $logo-font-family;
+  flex: 1;
+  color: $leading-green;
+  background: -webkit-linear-gradient(left, #5CFF66, #E4FF70, #FFE24F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#logged-user {
+  @extend %button;
+  flex: 0 0 60px;
+
+  &:hover .choose-user{
+    color: $white;
+  }
+
+  &:hover .logged-user-picture{
+    box-shadow: 0 0 20px $white;
+  }
+}
+
+.logged-user-picture {
+  @include roundedPicture($dim-sm-pic, none, none, inherit, auto);
+}
+
+.choose-user {
+  color: $dark-gray;
+  font-size: 0.8em;
+  position: relative;
+}
+
+.search {
+  position: relative;
+  height: 50px;
+  flex: 0 0 50px;
+
+  .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    font-size: 0.6em;
+    color: $gray;
+  }
+
+  #search-input {
+    @extend %input;
+    width: 60%;
+    margin-left: 35px;
+  }
+
+  button {
+    @include roundedPicture( 30px, $greenButton, none, absolute, 1 );
+    @include icon ( 16px, 30px, $white );
+    top: 10px;
+    right: 10px;
+    background: $leading-green;
+
+    &:hover {
+      background: $light-green;
+    }
+
+    i {
+      top: 9px;
+    }
+  }
+}
+
+
+.history {
+  &-outer, &-inner {
+    background: $white;
+    overflow: auto;
+  }
+
+  &-outer {
+    display: flex;
+
+  }
+
+  &-inner {
+    margin-right: 5px;
+    flex: 1;
+
+    li {
+      height: 60px;
+      overflow: hidden;
+    }
+  }
+}
+
+
+.user {
+  &-container > a {
+    border-left: 5px solid transparent;
+    text-decoration: none;
+    flex: 1;
+    color: inherit;
+    @include flexProperties( flex, row);
+
+    &:hover {
+      border-color: $leading-green;
+      background: $light-gray;
+    }
+  }
+
+  &-after-click {
+    border-color: #58D99B !important;
+    background: #F2F2F2 !important;
+  }
+}
+
+
+.picture-container {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  position: relative;
+
+  .is-active {
+    @include roundedPicture(10px, none, $white-border, absolute, 1);
+    background: $leading-green;
+    margin: 10px;
+  }
+
+  .profile-picture {
+    @include roundedPicture($dim-lg-pic, none, $white-border, absolute, 0);
+    margin: 10px;
+  }
+}
+
+.info-container {
+  flex: 1;
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.top-info {
+  overflow: hidden;
+  flex: 1;
+  justify-content: space-between;
+  @include flexProperties( flex, row);
+
+  .name {
+    font-size: 0.7em;
+    font-weight: 700;
+    flex: 1;
+    padding-right: 10px;
+  }
+
+  .sent-time {
+    width: 20px;
+    font-size: 0.5em;
+    flex: 0 0 20px;
+    color: #b0b0b0;
+  }
+}
+
+.bottom-info {
+  overflow: hidden;
+  flex: 1;
+  @include flexProperties( flex, row);
+  justify-content: space-between;
+
+  .news {
+    padding-right: 10px;
+    font-size: 0.5em;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+
+  .unread-count {
+    width: 15px;
+    height: 15px;
+    font-size: 0.5em;
+    flex: 0 0 15px;
+    color: $white;
+    background: $blue;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 15px;
+  }
+}
+
+/**************************** RIGHT COLUMN ************************************/
+.right-container {
+  max-width: 70%;
+  flex: 1;
+  @include flexProperties( flex, column);
+
+  a {
+    @extend %icon-anchor;
+
+    &:active i {
+      color: $leading-green;
+    }
+
+    &:hover i {
+      color: $leading-green;
+    }
+  }
+}
+
+
+.top-bar {
+  background: $white;
+  height: 50px;
+  line-height: 50px;
+  flex: 0 0 50px;
+  border-bottom: $gray-border;
+  box-sizing: content-box;
+  @include flexProperties( flex, row);
+
+  .current-user {
+    margin-left: 35px;
+    display: flex;
+    flex: 1;
+
+    span {
+    font-weight: 700;
+    font-size: 0.8em;
+    }
+  }
+
+  a i {
+    @include icon( 20px, $top-bar-height, $black);
+  }
+}
+
+.fa-long-arrow-up {
+  transform: rotate(45deg);
+}
+
+.conversation {
+  &-outer, &-inner{
+    background: $light-gray;
+    overflow: auto;
+    flex: 1;
+  }
+
+  &-outer{
+    display: flex;
+  }
+
+  &-inner {
+    padding: 20px 10px;
+    margin: 0 5px;
+
+    ul li {
+      margin: 0 10px;
+      overflow: hidden;
+      position: relative;
+      padding: 10px;
+    }
+  }
+}
+
+
+.user, .logged-user {
+  &-profile-picture {
+    @include roundedPicture($dim-med-pic, $pictureShadow, none, absolute, 1);
+  }
+
+  &-sent-message {
+    @include sentMessage();
+  }
+}
+
+.user {
+  &-profile-picture {
+    left: 10px;
+  }
+
+  &-sent-message {
+    background: $white;
+    border-radius: 0 1em 1em 1em;
+    box-shadow: 0 0 15px $gray;
+    margin-left: $dim-med-pic / 2;
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+.logged-user {
+  &-profile-picture {
+    right: 10px;
+  }
+
+  &-sent-message {
+    background: $leading-green;
+    color: $white;
+    margin-right: $dim-med-pic / 2;
+    box-shadow: 0 0 15px $leading-green;
+    border-radius: 1em 0 1em 1em;
+    margin-left: 10px;
+    float: right;
+  }
+}
+
+/* WEBKIT SETUP FOR SCROLLBAR - INCOMPATIBILE WITH FIREFOX*/
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: rgba(204,204,204,0.8);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(204,204,204,0.1);
+}
+
+/*Track */
+/*::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}*/
+
+
+/* -----------BOTTOM BAR-----------*/
+.input-bar {
+  @include flexProperties( flex, row);
+  border-top: $gray-border;
+  background: $white;
+  color: $gray;
+  flex: 0 0 40px;
+
+  a i {
+    @include icon( 20px, $input-bar-height, $dark-gray);
+  }
+}
+
+span.divider {
+  width: 0;
+  height: 28px;
+  margin: 6px 0;
+  border-left: $light-gray-border;
+  border-right: $light-gray-border;
+}
+
+.input {
+  margin: 0 20px;
+  flex: 1;
+  @extend %input;
+}
+
+#send-button {
+ @extend %button;
+ flex: 0 0 40px;
+ font-size: 20px;
+ color: $blue;
+
+}
+
+.fa-paper-plane {
+  text-shadow: 5px 5px 5px $gray;
+}

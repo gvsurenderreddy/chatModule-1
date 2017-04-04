@@ -1,0 +1,30 @@
+@mixin roundedPicture( $dimension, $boxShadow, $border, $position, $zIndex ) {
+  height: $dimension;
+  width: $dimension;
+  box-shadow: $boxShadow;
+  border: $border;
+  position: $position;
+  z-index: $zIndex;
+  border-radius: 50%;
+}
+
+@mixin sentMessage {
+  max-width: 60%;
+  padding: 20px;
+  font-size: 0.8em;
+  word-wrap: break-word;
+  margin-top: $dim-med-pic / 2;
+  margin-bottom: 10px;
+}
+
+@mixin flexProperties ( $display, $direction ) {
+  display: $display;
+  flex-direction: $direction;
+}
+
+
+@mixin icon ( $fontSize, $lineHeight, $color ) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: $color;
+}

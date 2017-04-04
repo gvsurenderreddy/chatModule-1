@@ -1,0 +1,56 @@
+/////////////////////////////////// FONTS /////////////////////////////////
+
+@import url(https://fonts.googleapis.com/css?family=Orbitron:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+// Font weights
+$light: 300;
+$regular: 400;
+$bold: 700;
+// Base font
+$base-font-family: 'Open Sans', sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 16px;
+// $base-line-height: 1.4;
+
+// Logo font
+$logo-font-family: 'Orbitron', sans-serif;
+
+/////////////////////////////////// COLORS ////////////////////////////////////
+
+$leading-green: #51DB98;
+$light-green: #8cf2bf;
+$white: #fff;
+$black: #000;
+$dark: #252525;
+$light-gray: #F0F0F0;
+$gray: #E0E0E0;
+$gray-wrapper-shadow: #7d7d7d;
+$dark-gray: #b6b6b6;
+$light-blue: #1094FF;
+$blue: #1094FF;
+
+
+
+///////////////////////////////// BOX-SHADOWS /////////////////////////////////
+
+$pictureShadow: 0 0 10px $dark-gray;
+$greenButton: 0 0 10px $leading-green;
+
+
+/////////////////////////////////// BORDERS ///////////////////////////////////
+
+$white-border: 2px solid $white;
+$light-gray-border: 1px solid $light-gray;
+$gray-border: 1px solid $gray;
+$black-border: 1px solid $black;
+
+///////////////////////////////// DIMENSIONS //////////////////////////////////
+
+$dim-sm-pic: 30px;
+$dim-med-pic: 35px;
+$dim-lg-pic: 40px;
+
+$history-li-height: 60px;
+$top-bar-height: 50px;
+$input-bar-height: 40px;
