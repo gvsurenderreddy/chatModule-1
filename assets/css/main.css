@@ -297,6 +297,9 @@ body {
 #logged-user {
   flex: 0 0 60px;
 }
+#logged-user span {
+  bottom: 10px;
+}
 #logged-user:hover .choose-user {
   color: #fff;
 }
@@ -353,9 +356,6 @@ body {
 }
 .search button:hover {
   background: #8cf2bf;
-}
-.search button i {
-  top: 9px;
 }
 
 .history-outer, .history-inner {
@@ -602,7 +602,6 @@ body {
 -webkit-border-radius: 10px;
 border-radius: 10px;
 }*/
-/* -----------BOTTOM BAR-----------*/
 .input-bar {
   display: flex;
   flex-direction: row;
@@ -634,6 +633,9 @@ span.divider {
   flex: 0 0 40px;
   font-size: 20px;
   color: #1094FF;
+}
+#send-button:hover i {
+  color: #99cdff;
 }
 
 .fa-paper-plane {

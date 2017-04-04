@@ -50,6 +50,10 @@
   @extend %button;
   flex: 0 0 60px;
 
+  span {
+    bottom: 10px;
+  }
+
   &:hover .choose-user{
     color: $white;
   }
@@ -97,10 +101,6 @@
 
     &:hover {
       background: $light-green;
-    }
-
-    i {
-      top: 9px;
     }
   }
 }
@@ -364,8 +364,6 @@
 border-radius: 10px;
 }*/
 
-
-/* -----------BOTTOM BAR-----------*/
 .input-bar {
   @include flexProperties( flex, row);
   border-top: $gray-border;
@@ -398,6 +396,9 @@ span.divider {
  font-size: 20px;
  color: $blue;
 
+ &:hover i {
+   color: $light-blue;
+ }
 }
 
 .fa-paper-plane {
