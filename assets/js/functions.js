@@ -1,3 +1,4 @@
+
 // callback function for sending inputted message
 var sendMessage = function() {
   var inputtedText = $("input.input[type='text']").val();
@@ -14,16 +15,22 @@ var sendMessage = function() {
   }
 }
 
-// event after "enter" press
-$("input.input").keypress(function(event) {
-    if (event.which == 13) sendMessage();
+// event after "enter" press / some problem
+// $("input.input").keypress(function(event) {
+//     if (event.which == 13) sendMessage();
+// });
+
+// event after "enter" press - for IE compability /does not work/ why?
+$("input.input").keydown(function(event) {
+    if (event.keyCode == 13) sendMessage();
 });
 
 // event after #send-button click
 $('#send-button').click(sendMessage);
 
 
-// events after click on user
+
+// events after on user click
 $('#users-list').on('click', 'li', function() {
   // change username on top-bar
   var name = $(this).find('.name').text();
@@ -37,7 +44,7 @@ $('#users-list').on('click', 'li', function() {
 
 // SETTING THE SCROLLBAR IN CONVERSATION WINDOW
 var conversation = document.getElementById("conversation");
-
+var c = 0;
 // first set scrollbar on the bottom of the conversation window
 conversation.scrollTop = conversation.scrollHeight;
 
@@ -49,7 +56,7 @@ var add = setInterval(function() {
 }, 1000);
 
 
-// FILTERING USERS LIST
+// filtering users list
 function findUser() {
   // declare variables
   var input, filter, ul, li, a, i;
