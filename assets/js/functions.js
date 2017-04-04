@@ -1,3 +1,4 @@
+$(document).ready(function(){
 
 // callback function for sending inputted message
 var sendMessage = function() {
@@ -15,19 +16,16 @@ var sendMessage = function() {
   }
 }
 
-// event after "enter" press / some problem
+// event after "enter" press
 $("input.input").keypress(function(e) {
-    if (e.which == 13) sendMessage();
+    if (e.which == 13) {
+      sendMessage();
+      e.preventDefault();
+    }
 });
-
-// event after "enter" press - for IE compability /does not work/ why?
-// $("input.input").keydown(function(event) {
-//     if (event.keyCode == 13) sendMessage();
-// });
 
 // event after #send-button click
 $('#send-button').click(sendMessage);
-
 
 
 // events after on user click
@@ -74,3 +72,6 @@ function findUser() {
     }
   }
 }
+
+
+});
