@@ -16,14 +16,14 @@ var sendMessage = function() {
 }
 
 // event after "enter" press / some problem
-// $("input.input").keypress(function(event) {
-//     if (event.which == 13) sendMessage();
-// });
+$("input.input").keypress(function(e) {
+    if (e.which == 13) sendMessage();
+});
 
 // event after "enter" press - for IE compability /does not work/ why?
-$("input.input").keydown(function(event) {
-    if (event.keyCode == 13) sendMessage();
-});
+// $("input.input").keydown(function(event) {
+//     if (event.keyCode == 13) sendMessage();
+// });
 
 // event after #send-button click
 $('#send-button').click(sendMessage);
