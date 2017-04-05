@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="assets/js/lib/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/functions.js"></script>
 
   </head>
   <body>
@@ -20,8 +19,8 @@
           <div class="logo">
             <span>TrueChat</span>
           </div>
-          <button id="logged-user">
-            <img class="logged-user-picture" src="assets/images/profiles/Tyrion.jpg" alt="">
+          <button id="owner">
+            <img class="owner-picture" src="assets/images/profiles/Tyrion.jpg" alt="">
             <span class="choose-user"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
           </button>
         </div>
@@ -31,7 +30,6 @@
           <input id="search-input" type="text" onkeyup="findUser()" name="" value="" placeholder="Search Conversation">
           <button id="add-conversation" type="button" name="button">
             <span><i class="fa fa-plus" aria-hidden="true"></i></span>
-
           </button>
         </div>
 
@@ -62,6 +60,50 @@
                     </div>
                   </a>
                 </div>
+
+                <ul class="user-history">
+                  <li>
+                    <img class="user-profile-picture" src="assets/images/profiles/Arya.jpg" alt="">
+                    <div class="user-sent-message">
+                      <span>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="owner-profile-picture" src="assets/images/profiles/Tyrion.jpg" alt="">
+                    <div class="owner-sent-message">
+                      <span>
+                        Lorem ipsum
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="owner-profile-picture" src="assets/images/profiles/Tyrion.jpg" alt="">
+                    <div class="owner-sent-message">
+                      <span>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="user-profile-picture" src="assets/images/profiles/Arya.jpg" alt="">
+                    <div class="user-sent-message">
+                      <span>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="user-profile-picture" src="assets/images/profiles/Arya.jpg" alt="">
+                    <div class="user-sent-message">
+                      <span>
+                        Lorem ipsum dolor sit amet
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+
               </li>
               <li>
                 <div class="user-container">
@@ -249,8 +291,8 @@
         </div>
         <div class="conversation-outer">
           <div id="conversation" class="conversation-inner">
-            <ul class="clearfix">
-              <li>
+            <ul id="show-history" class="clearfix">
+              <!-- <li>
                 <img class="user-profile-picture" src="assets/images/profiles/Arya.jpg" alt="">
                 <div class="user-sent-message">
                   <span>
@@ -259,16 +301,16 @@
                 </div>
               </li>
               <li>
-                <img class="logged-user-profile-picture" src="assets/images/profiles/Tyrion.jpg" alt="">
-                <div class="logged-user-sent-message">
+                <img class="owner-profile-picture" src="assets/images/profiles/Tyrion.jpg" alt="">
+                <div class="owner-sent-message">
                   <span>
                     Lorem ipsum
                   </span>
                 </div>
               </li>
               <li>
-                <img class="logged-user-profile-picture" src="assets/images/profiles/Tyrion.jpg" alt="">
-                <div class="logged-user-sent-message">
+                <img class="owner-profile-picture" src="assets/images/profiles/Tyrion.jpg" alt="">
+                <div class="owner-sent-message">
                   <span>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   </span>
@@ -289,7 +331,7 @@
                     Lorem ipsum dolor sit amet
                   </span>
                 </div>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -308,5 +350,6 @@
 
       </div>
     </div>
+  <script type="text/javascript" src="assets/js/functions.js"></script>
   </body>
 </html>

@@ -46,7 +46,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-#logged-user {
+#owner {
   @extend %button;
   flex: 0 0 60px;
 
@@ -58,12 +58,12 @@
     color: $white;
   }
 
-  &:hover .logged-user-picture{
+  &:hover .owner-picture{
     box-shadow: 0 0 20px $white;
   }
 }
 
-.logged-user-picture {
+.owner-picture {
   @include roundedPicture($dim-sm-pic, none, none, inherit, auto);
 }
 
@@ -126,6 +126,10 @@
       overflow: hidden;
     }
   }
+}
+
+.user-history {
+  display: none;
 }
 
 
@@ -299,7 +303,7 @@
 }
 
 
-.user, .logged-user {
+.user, .owner {
   &-profile-picture {
     @include roundedPicture($dim-med-pic, $pictureShadow, none, absolute, 1);
   }
@@ -324,7 +328,7 @@
   }
 }
 
-.logged-user {
+.owner {
   &-profile-picture {
     right: 10px;
   }

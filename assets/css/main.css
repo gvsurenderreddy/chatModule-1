@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-#dropdown-menu, #logged-user, #send-button {
+#dropdown-menu, #owner, #send-button {
   background: none;
   outline: none;
   height: 100%;
@@ -294,20 +294,20 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-#logged-user {
+#owner {
   flex: 0 0 60px;
 }
-#logged-user span {
+#owner span {
   bottom: 10px;
 }
-#logged-user:hover .choose-user {
+#owner:hover .choose-user {
   color: #fff;
 }
-#logged-user:hover .logged-user-picture {
+#owner:hover .owner-picture {
   box-shadow: 0 0 20px #fff;
 }
 
-.logged-user-picture {
+.owner-picture {
   height: 30px;
   width: 30px;
   box-shadow: none;
@@ -372,6 +372,10 @@ body {
 .history-inner li {
   height: 60px;
   overflow: hidden;
+}
+
+.user-history {
+  display: none;
 }
 
 .user-container > a {
@@ -536,7 +540,7 @@ body {
   padding: 10px;
 }
 
-.user-profile-picture, .logged-user-profile-picture {
+.user-profile-picture, .owner-profile-picture {
   height: 35px;
   width: 35px;
   box-shadow: 0 0 10px #b6b6b6;
@@ -545,7 +549,7 @@ body {
   z-index: 1;
   border-radius: 50%;
 }
-.user-sent-message, .logged-user-sent-message {
+.user-sent-message, .owner-sent-message {
   max-width: 60%;
   padding: 20px;
   font-size: 0.8em;
@@ -566,10 +570,10 @@ body {
   float: left;
 }
 
-.logged-user-profile-picture {
+.owner-profile-picture {
   right: 10px;
 }
-.logged-user-sent-message {
+.owner-sent-message {
   background: #51DB98;
   color: #fff;
   margin-right: 17.5px;
