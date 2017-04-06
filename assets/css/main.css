@@ -374,10 +374,6 @@ body {
   overflow: hidden;
 }
 
-.user-history {
-  display: none;
-}
-
 .user-container > a {
   border-left: 5px solid transparent;
   text-decoration: none;
