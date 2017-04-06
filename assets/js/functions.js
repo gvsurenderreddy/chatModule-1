@@ -15,12 +15,14 @@ var data = [
     lastName: "Snow",
     image: "assets/images/profiles/Jon.jpg",
     isActive: true,
+    // the reason that unreadCount is here is to show that proper div exists
+    // better would be to add separate boolean to each message, e.g. read: true/false
     unreadCount: 1,
     messages: [
       {
         date: "Wed",
         sentBy: "user",
-        text: "Winter is coming, so... let it snow, let it snow, let it snow!"
+        text: "Ghost! Where are you?"
       },
       {
         date: "Mon",
@@ -30,17 +32,17 @@ var data = [
       {
         date: "Sun",
         sentBy: "user",
-        text: "Winter is coming, so... let it snow, let it snow, let it snow!"
+        text: "Nicely done, Melisandre, but my hurt's not beating anymore.."
       },
       {
         date: "Wed",
         sentBy: "user",
-        text: "Winter is coming, so... let it snow, let it snow, let it snow!"
+        text: "Long live the King in the North! Lol, I'm the King in the North."
       },
       {
         date: "Mon",
         sentBy: "owner",
-        text: "Holy Crap!"
+        text: "Uh, la la la!"
       },
       {
         date: "Sun",
@@ -97,7 +99,7 @@ var data = [
       {
         date: "Sun",
         sentBy: "owner",
-        text: "I like mornings. Huh, just kiddin'!"
+        text: "I like mornings. Huh, just kiddin!"
       },
       {
         date: "Sat",
@@ -112,13 +114,13 @@ var data = [
 
 
 
-
 ///////////////////////////// FUNCTION: PRINT ALL TALKED USERS IN HISTORY WINDOW
 function printUsers() {
   // declare users list
   var usersOutput = "<ul id='users-list'>";
   // loop through data and add users to list
   for (var i in data) {
+    console.log(i);
     // find last message in an array to print below user's name
     var recentMessage = data[i].messages[data[i].messages.length - 1];
     // create an user li to print on users list
@@ -143,6 +145,7 @@ function printUsers() {
 }
 
 printUsers();
+
 
 
 /////////////////////////////////////////// FUNCTION: PRINT CONVERSATION HISTORY
@@ -178,21 +181,25 @@ $('#users-list').on('click', 'li', function() {
   // remove .active from last li and add to clicked one
   $(".active").removeClass("active");
   $(this).addClass("active");
-
   // change '.user-container > a' styling after click
   $('a.user-after-click').removeClass('user-after-click');
   $(this).find('.user-container > a').addClass('user-after-click');
-
   // change username on top-bar
   var name = $(this).find('.name').text();
   $('#current-user-name').text(name);
 
-  printMessageHistory();
+  // clear the count of unread messages
+  // find index of clicked user in users LIST
+  var userIndex = $('.active').index();
 
+  // find user in data by index from list (foundation: index from users list = user index in DB)
+  var count = data[userIndex].unreadCount;
+  // print message history
+  printMessageHistory();
 
   // SETTING THE SCROLLBAR IN CONVERSATION WINDOW
   var conversation = document.getElementById("conversation");
-  var c = 0;
+  // var c = 0;
   // first set scrollbar on the bottom of the conversation window
   conversation.scrollTop = conversation.scrollHeight;
 
@@ -203,15 +210,16 @@ $('#users-list').on('click', 'li', function() {
       if(isScrolledToBottom)
         conversation.scrollTop = conversation.scrollHeight - conversation.clientHeight;
   }, 1000);
-
-
-
 });
+
+
 
 /////////////////////// FUNCTION: ADD INPUTTED MESSAGE TO USER'S MESSAGE HISTORY
 var sendMessage = function() {
-  // find active user by class .active
-  var user = data[$(".active").index()];
+  // find index of clicked user in users LIST
+  var userIndex = $('.active').index();
+  // find user in data by index from list (foundation: index from users list = user index in DB)
+  var user = data[userIndex];
   // find user messages
   var messages = user.messages;
   // get the message from input
@@ -229,6 +237,10 @@ var sendMessage = function() {
     messages.push(newMessage);
     // update message history
     printMessageHistory();
+    // find span.news below user's name and print there last added message
+    $("#users-list li.active").find(".news").text(inputtedText);
+
+
     // animate scrolling to bottom after message send
     $("#conversation").animate({
       scrollTop: conversation.scrollHeight
@@ -267,5 +279,6 @@ function findUser() {
     }
   }
 }
+
 
 // });
